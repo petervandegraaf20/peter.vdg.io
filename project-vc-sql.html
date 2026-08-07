@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venture Capital SQL Case Study - Peter Van de Graaf</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .case-study-header { padding: 40px 0 20px; border-bottom: 1px solid #e2e8f0; margin-bottom: 30px; }
+    .meta-tag { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 12px; font-weight: 600; font-size: 0.875rem; margin-right: 8px; }
+    .code-block { background: #0f172a; color: #38bdf8; padding: 20px; border-radius: 8px; font-family: monospace; overflow-x: auto; margin: 20px 0; }
+    .case-section { margin-bottom: 40px; }
+    .case-section h3 { margin-bottom: 12px; color: #1e293b; }
+    .back-nav { margin-bottom: 20px; display: inline-block; }
+  </style>
+</head>
+<body>
+
+  <header class="hero-section" style="padding-bottom: 30px;">
+    <nav class="navbar">
+      <div class="logo">Peter Van de Graaf</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="resume.pdf" target="_blank">Resume</a></li>
+        <li><a href="mailto:peter.vandegraaf20@gmail.com">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <a href="index.html#projects" class="back-nav" style="color: #93c5fd; text-decoration: none;">&larr; Back to All Projects</a>
+      <h1>Venture Capital & Startup Ecosystem Analysis</h1>
+      <p class="subtitle">Relational SQL Database Analytics | CTEs | Multi-Table JOINs</p>
+    </div>
+  </header>
+
+  <main class="main-content" style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Overview & Problem Statement -->
+    <section class="case-section">
+      <span class="meta-tag">PostgreSQL / SQL</span>
+      <span class="meta-tag">Database Modeling</span>
+      <span class="meta-tag">Subqueries & CTEs</span>
+      
+      <div class="case-study-header">
+        <h2>Project Overview & Objectives</h2>
+      </div>
+      <p>
+        Evaluating venture capital investments requires navigating multi-layered relational structures involving startups, funding rounds, institutional investors, acquisitions, and founder educational backgrounds.
+      </p>
+      <p style="margin-top: 15px;">
+        <strong>Objective:</strong> Perform advanced relational database queries using PostgreSQL to analyze acquisition outcomes, funding velocity across startup stages, and founder background correlations.
+      </p>
+    </section>
+
+    <!-- Visual Banner / DB Diagram -->
+    <section class="case-section">
+      <img src="vc-startup-sql.png" alt="VC Database Query Results" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </section>
+
+    <!-- Key SQL Code Examples -->
+    <section class="case-section">
+      <h3>Complex Query Breakdown</h3>
+      <p>
+        Example query utilizing multi-table `INNER JOIN`s, conditional aggregation, and Common Table Expressions (CTEs) to evaluate startup funding totals against acquisition price:
+      </p>
+
+      <div class="code-block">
+        <pre>
+WITH FundingSummary AS (
+    SELECT 
+        company_id,
+        COUNT(id) AS total_rounds,
+        SUM(raised_amount) AS total_capital_raised
+    FROM funding_rounds
+    GROUP BY company_id
+)
+SELECT 
+    c.name AS company_name,
+    c.category_code,
+    fs.total_capital_raised,
+    a.price_amount AS acquisition_price,
+    ROUND((a.price_amount / fs.total_capital_raised), 2) AS return_multiple
+FROM company c
+JOIN FundingSummary fs ON c.id = fs.company_id
+JOIN acquisition a ON c.id = a.acquired_company_id
+WHERE a.price_amount > 0 AND fs.total_capital_raised > 0
+ORDER BY return_multiple DESC
+LIMIT 10;
+        </pre>
+      </div>
+    </section>
+
+    <!-- Key Insights -->
+    <section class="case-section">
+      <h3>Key Findings & Analytics Takeaways</h3>
+      <ul>
+        <li><strong>Acquisition Multiples:</strong> Startups raising Series A and B rounds with lean capital structures yielded higher acquisition multiples than over-capitalized late-stage ventures.</li>
+        <li><strong>Regional Distribution:</strong> Silicon Valley and Greater Boston accounted for the highest concentration of venture-backed acquisition exits within the dataset.</li>
+        <li><strong>Founder Network Effects:</strong> Universities with strong startup incubator ecosystems directly correlated with higher total funding raised per funding round.</li>
+      </ul>
+    </section>
+
+    <div style="text-align: center; margin-top: 50px;">
+      <a href="index.html#projects" class="btn btn-primary">&larr; Back to Portfolio Projects</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-name">Peter Van de Graaf</p>
+    <p class="footer-copy">&copy; 2026 | Greater Boston, Massachusetts</p>
+  </footer>
+
+</body>
+</html>
