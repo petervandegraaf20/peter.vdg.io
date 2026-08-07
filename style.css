@@ -16,11 +16,11 @@ body {
 .hero-section {
   background-color: #0b1325;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('IMG_0099.jpeg');
-  background-size: cover; 
-  background-position: center; 
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   color: #ffffff;
-  padding: 80px 40px 100px 40px; 
+  padding: 80px 40px 100px 40px;
 }
 
 /* Navbar */
