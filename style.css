@@ -12,20 +12,24 @@ body {
   line-height: 1.6;
 }
 
-/* Dark Top Hero Header - Pure CSS Glow */
+/* Dark Top Hero Header */
 .hero-section {
-  background-color: #080d1a;
+  background-color: #080d1a; /* Darker, cleaner navy base */
   background-image: 
-    radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(11, 19, 37, 0.8) 0%, #080d1a 100%);
+    linear-gradient(rgba(8, 13, 26, 0.45), rgba(8, 13, 26, 0.45)), 
+    url('pvdg.png?v=1'); /* Added cache-buster ?v=1 */
+  background-size: auto 100%; /* Keeps it crisp and centered on desktop */
+  background-position: center;
+  background-repeat: no-repeat;
   color: #ffffff;
-  padding: 80px 40px 100px 40px;
+  padding: 80px 40px 100px 40px; 
 }
 
 @media (max-width: 768px) {
   .hero-section {
-    background-size: cover; /* Mobile screens are narrow enough for cover to stay sharp */
+    background-size: cover; /* Mobile still needs cover to fill the vertical height */
+    padding-top: 1rem;
+    padding-bottom: 2rem;
   }
 }
 
