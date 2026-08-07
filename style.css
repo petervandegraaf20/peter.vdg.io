@@ -14,9 +14,8 @@ body {
 
 /* Dark Top Hero Header */
 .hero-section {
-  background-color: #000000;
-  /* Make sure the filename exactly matches the one in your repo, including the .jpeg extension */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('IMG_0101.jpeg');
+  background-color: #0b1325;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('IMG_0099.jpeg');
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat;
