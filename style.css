@@ -23,19 +23,21 @@ body {
   background-color: #000000;
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-    url('hero-network.jpg?v=2');
+    url('hero-network.jpg?v=3');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: #ffffff;
-  padding: 80px 40px 100px 40px;
+  padding: 60px 20px 80px 20px;
+  width: 100%;
 }
 
-/* Navbar */
+/* Navbar Centering */
 .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   font-size: 0.9rem;
@@ -43,9 +45,13 @@ body {
 
 .nav-links {
   display: flex;
+  justify-content: center; /* Center-aligns the list items */
+  align-items: center;
   list-style: none;
   gap: 20px;
-  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-links a {
