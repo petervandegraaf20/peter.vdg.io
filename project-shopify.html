@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopify App Ecosystem Case Study - Peter Van de Graaf</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .case-study-header { padding: 40px 0 20px; border-bottom: 1px solid #e2e8f0; margin-bottom: 30px; }
+    .meta-tag { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 12px; font-weight: 600; font-size: 0.875rem; margin-right: 8px; }
+    .code-block { background: #0f172a; color: #38bdf8; padding: 20px; border-radius: 8px; font-family: monospace; overflow-x: auto; margin: 20px 0; }
+    .case-section { margin-bottom: 40px; }
+    .case-section h3 { margin-bottom: 12px; color: #1e293b; }
+    .back-nav { margin-bottom: 20px; display: inline-block; }
+  </style>
+</head>
+<body>
+
+  <header class="hero-section" style="padding-bottom: 30px;">
+    <nav class="navbar">
+      <div class="logo">Peter Van de Graaf</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="resume.pdf" target="_blank">Resume</a></li>
+        <li><a href="mailto:peter.vandegraaf20@gmail.com">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <a href="index.html#projects" class="back-nav" style="color: #93c5fd; text-decoration: none;">&larr; Back to All Projects</a>
+      <h1>Shopify App Ecosystem & Review Analytics</h1>
+      <p class="subtitle">Power BI | DAX | Relational Data Modeling</p>
+    </div>
+  </header>
+
+  <main class="main-content" style="max-width: 900px; margin: 0 auto; padding: 40px 20px;">
+    
+    <!-- Overview & Problem Statement -->
+    <section class="case-section">
+      <span class="meta-tag">Power BI</span>
+      <span class="meta-tag">DAX</span>
+      <span class="meta-tag">Data Modeling</span>
+      
+      <div class="case-study-header">
+        <h2>Executive Summary & Business Problem</h2>
+      </div>
+      <p>
+        The Shopify App Store hosts thousands of third-party applications competing for merchant installs. However, high overall ratings can be misleading if driven by low review volumes or artificial early-stage boosts.
+      </p>
+      <p style="margin-top: 15px;">
+        <strong>Objective:</strong> Build an end-to-end Power BI reporting solution to model multi-table relational data, analyze rating stability against total review volume, and evaluate developer responsiveness as a key churn indicator.
+      </p>
+    </section>
+
+    <!-- Visual Banner / Dashboard Image -->
+    <section class="case-section">
+      <img src="shopify-app-analysis.png" alt="Shopify Power BI Dashboard Layout" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    </section>
+
+    <!-- Data Pipeline & DAX Expressions -->
+    <section class="case-section">
+      <h3>Data Pipeline & Custom DAX Modeling</h3>
+      <p>
+        Data was ingested across multiple relational tables (Apps, Categories, Reviews, Developers). Key DAX measures were authored to calculate helpful review ratios and isolate high-volume verified apps from statistical anomalies:
+      </p>
+
+      <div class="code-block">
+        <pre>
+// DAX: Helpful Review Ratio
+HelpfulReviewRatio = 
+DIVIDE(
+    SUM('Reviews'[helpful_count]),
+    COUNT('Reviews'[review_id]),
+    0
+)
+
+// DAX: High-Volume Rating Stability Flag
+RatingStabilityFlag = 
+IF(
+    [Total Reviews] >= 50 && [Average Rating] >= 4.5,
+    "Established Leader",
+    "Unverified / High Volatility"
+)
+        </pre>
+      </div>
+    </section>
+
+    <!-- Key Findings & Insights -->
+    <section class="case-section">
+      <h3>Key Business Insights</h3>
+      <ul>
+        <li><strong>Review Count Thresholds:</strong> Rating volatility stabilizes significantly once an app surpasses 50 verified merchant reviews.</li>
+        <li><strong>Developer Response Times:</strong> Developers maintaining a developer response rate above 70% in review threads correlate directly with higher sustained rating retention over 12 months.</li>
+        <li><strong>Category Saturation:</strong> Marketing and Sales categories hold the highest app volume, while Store Design apps exhibit the highest average rating per customer install.</li>
+      </ul>
+    </section>
+
+    <div style="text-align: center; margin-top: 50px;">
+      <a href="index.html#projects" class="btn btn-primary">&larr; Back to Portfolio Projects</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer-name">Peter Van de Graaf</p>
+    <p class="footer-copy">&copy; 2026 | Greater Boston, Massachusetts</p>
+  </footer>
+
+</body>
+</html>
