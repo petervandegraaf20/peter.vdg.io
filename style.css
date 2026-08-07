@@ -39,25 +39,32 @@ body {
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   font-size: 0.9rem;
 }
 
 .nav-links {
   display: flex;
-  justify-content: center; /* Center-aligns the list items */
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   list-style: none;
   gap: 20px;
   width: 100%;
+  margin: 0 auto;
   padding: 0;
-  margin: 0;
+  text-align: center;
+}
+
+.nav-links li {
+  display: inline-block;
 }
 
 .nav-links a {
   color: #cbd5e1;
   text-decoration: none;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -65,7 +72,7 @@ body {
 }
 
 .nav-email {
-  word-break: break-all;
+  word-break: normal;
 }
 
 /* Hero Body */
