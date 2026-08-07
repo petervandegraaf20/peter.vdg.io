@@ -15,12 +15,18 @@ body {
 /* Dark Top Hero Header */
 .hero-section {
   background-color: #0b1325;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('IMG_0099.jpeg?v=1');
-  background-size: cover;
+  background-image: linear-gradient(rgba(11, 19, 37, 0.3), rgba(11, 19, 37, 0.3)), url('IMG_0099.jpeg?v=3');
+  background-size: contain; /* Keeps native resolution sharp without stretching pixels */
   background-position: center;
   background-repeat: no-repeat;
   color: #ffffff;
   padding: 80px 40px 100px 40px;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-size: cover; /* Mobile screens are narrow enough for cover to stay sharp */
+  }
 }
 
 /* Navbar */
