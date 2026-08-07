@@ -15,12 +15,12 @@ body {
 /* Dark Top Hero Header */
 .hero-section {
   background-color: #000000;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('hero-bg.jpg');
-  background-size: contain; /* Keeps the full wave visible on desktop without cropping */
-  background-position: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('hero-bg.jpg');
+  background-size: auto 100%; /* Fits the full height without zooming in horizontally */
+  background-position: center; /* Centers the particle wave behind your text */
   background-repeat: no-repeat;
   color: #ffffff;
-  padding: 60px 40px 80px 40px; /* Slightly higher padding so the wave has room to show off on desktop */
+  padding: 80px 40px 100px 40px; /* Gives the hero section enough vertical height to display the wave */
 }
 
 /* Navbar */
