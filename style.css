@@ -15,7 +15,7 @@ body {
 /* Dark Top Hero Header */
 .hero-section {
   background-color: #000000;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('IMG_0101');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('IMG_0101.JPEG');
   background-size: auto 100%; /* Fits the full height without zooming in horizontally */
   background-position: center; /* Centers the particle wave behind your text */
   background-repeat: no-repeat;
