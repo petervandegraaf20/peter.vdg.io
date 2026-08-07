@@ -14,7 +14,11 @@ body {
 
 /* Dark Top Hero Header */
 .hero-section {
-  background-color: #0b1325;
+  background-color: #000000;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #ffffff;
   padding: 20px 40px 60px 40px;
 }
@@ -161,6 +165,9 @@ body {
   border: 1px solid #f1f5f9;
   text-align: left;
   transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-card:hover {
@@ -177,6 +184,9 @@ body {
 
 .card-body {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .card-body h3 {
@@ -195,6 +205,12 @@ body {
 .card-text {
   font-size: 0.88rem;
   color: #64748b;
+  margin-bottom: 20px;
+}
+
+.card-body .btn {
+  margin-top: auto !important;
+  align-self: flex-start;
 }
 
 /* Toolkit Badges */
@@ -257,13 +273,11 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  /* Hide the duplicate logo name & email in the top nav to save space */
   .navbar .logo,
   .nav-email {
     display: none;
   }
 
-  /* Make navigation links inline and compact */
   .nav-links {
     flex-direction: row;
     flex-wrap: wrap;
@@ -274,7 +288,6 @@ html, body {
     font-size: 0.85rem;
   }
 
-  /* Reduce top/bottom padding so the buttons fit on screen */
   .hero-section {
     padding-top: 1rem;
     padding-bottom: 2rem;
@@ -284,22 +297,4 @@ html, body {
     font-size: 1.8rem;
     margin-top: 1rem;
   }
-}
-
-/* Align buttons to the bottom of project cards */
-.project-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.card-body .btn {
-  margin-top: auto !important;
-  align-self: flex-start; /* Keeps the button from stretching full width */
 }
