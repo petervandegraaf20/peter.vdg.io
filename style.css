@@ -1,8 +1,14 @@
-/* Base Styles */
-* {
+/* Base Styles & Global Resets */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -14,38 +20,25 @@ body {
 
 /* Dark Top Hero Header */
 .hero-section {
-  background-color: #080d1a; /* Darker, cleaner navy base */
+  background-color: #000000;
   background-image: 
-    linear-gradient(rgba(8, 13, 26, 0.45), rgba(8, 13, 26, 0.45)), 
-    url('pvdg.png?v=1'); /* Added cache-buster ?v=1 */
-  background-size: auto 100%; /* Keeps it crisp and centered on desktop */
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url('hero-network.jpg?v=2');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: #ffffff;
-  padding: 80px 40px 100px 40px; 
-}
-
-@media (max-width: 768px) {
-  .hero-section {
-    background-size: cover; /* Mobile still needs cover to fill the vertical height */
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-  }
+  padding: 80px 40px 100px 40px;
 }
 
 /* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   font-size: 0.9rem;
-}
-
-.logo {
-  font-weight: 700;
-  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -63,6 +56,10 @@ body {
 
 .nav-links a:hover {
   color: #ffffff;
+}
+
+.nav-email {
+  word-break: break-all;
 }
 
 /* Hero Body */
@@ -266,24 +263,8 @@ body {
   margin-bottom: 4px;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-email {
-  word-break: break-all;
-}
-
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .navbar .logo,
   .nav-email {
     display: none;
   }
