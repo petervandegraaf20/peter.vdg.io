@@ -250,6 +250,98 @@ body {
   font-size: 0.9rem;
 }
 
+/* Resume Page Styles */
+.resume-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px 20px 80px 20px; /* 80px bottom padding fixes footer cutoff */
+}
+
+.resume-section {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.resume-section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #cbd5e1;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 24px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.item-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.item-company {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.item-date {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.item-bullet-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.item-bullet-list li {
+  margin-bottom: 6px;
+}
+
+.skills-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.skill-group {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px 18px;
+}
+
+.skill-group-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #0f172a;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skill-group-items {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
 /* Footer */
 .footer {
   background-color: #0b1325;
@@ -275,7 +367,7 @@ body {
   margin-bottom: 4px;
 }
 
-/* Mobile Responsiveness */
+/* Mobile & Print Responsiveness */
 @media (max-width: 768px) {
   .nav-email {
     display: none;
@@ -299,5 +391,40 @@ body {
   .hero-content h1 {
     font-size: 1.8rem;
     margin-top: 1rem;
+  }
+
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .hero-section,
+  .footer,
+  .cta-buttons,
+  .navbar {
+    display: none !important;
+  }
+
+  .main-content,
+  .resume-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .resume-section-title {
+    border-bottom-color: #000000 !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: #000000 !important;
   }
 }
