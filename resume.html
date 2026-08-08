@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peter Van de Graaf - Resume</title>
+  <link rel="stylesheet" href="style.css?v=3" />
+  <style>
+    /* Dedicated Resume Styling */
+    .resume-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px 0;
+    }
+
+    .resume-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    .resume-header-info h1 {
+      font-size: 2rem;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .resume-header-info p {
+      font-size: 1rem;
+      color: #475569;
+      font-weight: 500;
+    }
+
+    .resume-contacts {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 6px;
+    }
+
+    .resume-contacts a {
+      color: #0088cc;
+      text-decoration: none;
+    }
+
+    .resume-section {
+      margin-bottom: 35px;
+      text-align: left;
+    }
+
+    .resume-section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+    }
+
+    /* Experience & Project Entries */
+    .timeline-item {
+      margin-bottom: 24px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .item-company {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    .item-date {
+      font-size: 0.85rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .item-bullet-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: #334155;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .item-bullet-list li {
+      margin-bottom: 6px;
+    }
+
+    /* Skills Grid */
+    .skills-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+
+    .skill-group {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 18px;
+    }
+
+    .skill-group-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #0f172a;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .skill-group-items {
+      font-size: 0.9rem;
+      color: #475569;
+    }
+
+    /* Native Print Optimizations */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+      }
+
+      .hero-section,
+      .footer,
+      .cta-buttons,
+      .navbar {
+        display: none !important;
+      }
+
+      .main-content {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+
+      .resume-container {
+        padding: 0 !important;
+      }
+
+      .resume-section-title {
+        border-bottom-color: #000000 !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: #000000 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dark Top Header / Hero Section -->
+  <header class="hero-section" id="home">
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="mailto:peter.vandegraaf20@gmail.com" class="nav-email">peter.vandegraaf20@gmail.com</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <h1>Peter Van de Graaf</h1>
+      <p class="subtitle">Data Analyst & Business Intelligence Specialist</p>
+      <p class="tagline">
+        Official Resume & Technical Overview | Greater Boston, MA
+      </p>
+      <div class="cta-buttons">
+        <a href="resume.pdf" target="_blank" class="btn btn-secondary">Download PDF</a>
+        <button onclick="window.print()" class="btn btn-secondary" style="cursor: pointer;">Print Resume</button>
+        <a href="index.html" class="btn btn-secondary">&larr; Back to Portfolio</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <div class="resume-container">
+
+      <!-- Executive Summary -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">Professional Summary</h2>
+        <p class="about-content" style="font-size: 0.98rem; line-height: 1.6;">
+          Data Analyst and Business Intelligence Specialist with a strong foundation in digital marketing consulting and performance SEO. Experienced in transforming multi-table relational databases into interactive dashboards, statistical models, and actionable executive insights using SQL, Power BI, Tableau, Python, and Excel. Proven ability to bridge technical analytics with revenue strategy, user behavior analysis, and cross-functional decision-making.
+        </p>
+      </section>
+
+      <!-- Technical Skills Matrix -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">Technical Skills</h2>
+        <div class="skills-matrix">
+          <div class="skill-group">
+            <div class="skill-group-title">Languages & Database</div>
+            <div class="skill-group-items">SQL (PostgreSQL, MySQL), Python (Pandas, NumPy), HTML5, CSS3</div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title">BI & Data Visualization</div>
+            <div class="skill-group-items">Power BI, DAX, Data Modeling (Star Schema), Tableau, Advanced Excel</div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-title">Analytics & Marketing</div>
+            <div class="skill-group-items">Google Analytics 4 (GA4), Google Tag Manager (GTM), SEO Consulting, A/B Testing</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects / Applied Analytics -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">Key Analytics Projects</h2>
+
+        <div class="timeline-item">
+          <div class="item-header">
+            <span class="item-title">Customer Demographics & Revenue Analytics</span>
+            <span class="item-date">Tableau | SQL | Excel</span>
+          </div>
+          <ul class="item-bullet-list">
+            <li>Engineered an interactive Tableau dashboard evaluating $986M+ in revenue across 150,000+ transactional records.</li>
+            <li>Constructed SQL subqueries and aggregation models to analyze monthly revenue trends, occupation spending profiles, and age-vs-AOV correlation patterns.</li>
+            <li>Identified key customer demographics and cuisine preferences to inform targeted marketing acquisition strategies.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="item-header">
+            <span class="item-title">Shopify App Ecosystem & Review Analytics</span>
+            <span class="item-date">Power BI | DAX | Data Modeling</span>
+          </div>
+          <ul class="item-bullet-list">
+            <li>Designed a multi-table relational database model and custom DAX measures in Power BI from scraped e-commerce dataset.</li>
+            <li>Analyzed review count volatility against rating stability, establishing benchmarks for developer response frequency and app retention drivers.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="item-header">
+            <span class="item-title">Venture Capital & Startup Ecosystem SQL Analysis</span>
+            <span class="item-date">SQL | ERD Modeling</span>
+          </div>
+          <ul class="item-bullet-list">
+            <li>Queried complex relational databases using window functions, multiple JOINs, and conditional logic to track startup funding trajectories.</li>
+            <li>Evaluated acquisition outcomes across venture fund rounds, founder education backgrounds, and capital efficiency metrics.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Experience History -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">Professional Experience</h2>
+
+        <div class="timeline-item">
+          <div class="item-header">
+            <div>
+              <span class="item-title">Digital Marketing & Performance SEO Consultant</span>
+            </div>
+            <span class="item-date">Greater Boston, MA</span>
+          </div>
+          <ul class="item-bullet-list">
+            <li>Advised clients on digital marketing strategies, organic acquisition funnels, and performance tracking architectures.</li>
+            <li>Utilized Google Analytics 4 (GA4) and Google Tag Manager (GTM) to set up custom conversion event pipelines, reporting dashboards, and user behavior funnels.</li>
+            <li>Leveraged data insights to optimize content performance, increase campaign ROI, and streamline client revenue drivers.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education & Training -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">Education & Credentials</h2>
+
+        <div class="timeline-item">
+          <div class="item-header">
+            <div>
+              <span class="item-title">Business Intelligence Analytics</span>
+              <span class="item-company"> — TripleTen</span>
+            </div>
+          </div>
+          <ul class="item-bullet-list">
+            <li>Intensive practical training in SQL query optimization, Power BI dashboard development, Tableau data storytelling, spreadsheet modeling, and Python data analysis.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="item-header">
+            <div>
+              <span class="item-title">Bachelor of Arts in Communications</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Dark Footer -->
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/peter-van-de-graaf/" target="_blank">LinkedIn</a>
+      <a href="mailto:peter.vandegraaf20@gmail.com">Email</a>
+    </div>
+    <p class="footer-name">Peter Van de Graaf</p>
+    <p class="footer-copy">© 2026 | Greater Boston, Massachusetts</p>
+  </footer>
+
+</body>
+</html>
