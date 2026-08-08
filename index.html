@@ -3,36 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Peter Van de Graaf - Portfolio</title>
- <link rel="stylesheet" href="style.css?v=3" />
-  <style>
-    @media screen and (max-width: 768px) {
-      .nav-email {
-        display: none !important;
-      }
-
-      .nav-links {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 8px 16px !important;
-        padding: 0 !important;
-        margin: 0 0 15px 0 !important;
-        list-style: none !important;
-      }
-
-      .hero-section {
-        padding-top: 15px !important;
-        padding-bottom: 20px !important;
-      }
-
-      .hero-content h1 {
-        font-size: 1.75rem !important;
-        margin-top: 10px !important;
-      }
-    }
-  </style>
+  <title>Peter Van de Graaf - Resume</title>
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
 
@@ -40,9 +12,9 @@
   <header class="hero-section" id="home">
     <nav class="navbar">
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
         <li><a href="resume.html">Resume</a></li>
         <li><a href="mailto:peter.vandegraaf20@gmail.com" class="nav-email">peter.vandegraaf20@gmail.com</a></li>
       </ul>
@@ -52,103 +24,134 @@
       <h1>Peter Van de Graaf</h1>
       <p class="subtitle">Data Analyst & Business Intelligence Specialist</p>
       <p class="tagline">
-        Transforming complex datasets into clear, actionable business insights through interactive dashboards 
-        and strategic storytelling. Specialized in SQL, Power BI, Tableau, Excel, and Python.
+        Official Resume & Technical Overview | Greater Boston, MA
       </p>
       <div class="cta-buttons">
-  <a href="#projects" class="btn btn-secondary">View Projects</a>
-  <a href="resume.html" class="btn btn-secondary">View Resume</a>
-  <a href="https://www.linkedin.com/in/peter-van-de-graaf/" target="_blank" class="btn btn-secondary">LinkedIn</a>
-</div>
+        <a href="resume.pdf" target="_blank" class="btn btn-secondary">Download PDF</a>
+        <button onclick="window.print()" class="btn btn-secondary" style="cursor: pointer;">Print Resume</button>
+        <a href="index.html" class="btn btn-secondary">&larr; Back to Portfolio</a>
+      </div>
     </div>
   </header>
 
-  <!-- Main Content Container -->
+  <!-- Main Content Area -->
   <main class="main-content">
+    <div class="resume-container">
 
-    <!-- About Section -->
-    <section id="about" class="section">
-      <h2 class="section-title">ABOUT ME</h2>
-      <div class="about-content">
-        <p>
-          I am a Data Analyst and Business Intelligence Specialist with a background in digital marketing consulting and SEO. My foundation in performance marketing gives me a distinct perspective on user behavior, acquisition metrics, and revenue drivers.
+      <!-- Executive Summary -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">Professional Summary</h2>
+        <p class="about-content" style="font-size: 0.98rem; line-height: 1.6;">
+          Data Analyst and Business Intelligence Specialist with a strong foundation in digital marketing consulting and performance SEO. Experienced in transforming multi-table relational databases into interactive dashboards, statistical models, and actionable executive insights using SQL, Power BI, Tableau, Python, and Excel. Proven ability to bridge technical analytics with revenue strategy, user behavior analysis, and cross-functional decision-making.
         </p>
-        <p>
-          I leverage SQL, Tableau, Power BI, Python, and Excel to query complex databases, build dynamic dashboards, and perform exploratory data analysis. I specialize in turning raw, multi-table data into clear, actionable stories that empower stakeholders to make confident, data-driven business decisions.
-        </p>
-      </div>
-    </section>
+      </section>
 
-    <!-- Featured Projects Grid -->
-    <section id="projects" class="section">
-      <h2 class="section-title">FEATURED PROJECTS</h2>
-      <div class="projects-grid">
-        
-        <!-- Project Card 1 -->
-        <article class="project-card">
-          <div class="card-img-wrapper">
-            <img src="customer-demographics.png" alt="Customer Demographics and Revenue Analytics Dashboard" />
+      <!-- Technical Skills Matrix -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">Technical Skills</h2>
+        <div class="skills-matrix">
+          <div class="skill-group">
+            <div class="skill-group-title">Languages & Database</div>
+            <div class="skill-group-items">SQL (PostgreSQL, MySQL), Python (Pandas, NumPy), HTML5, CSS3</div>
           </div>
-          <div class="card-body">
-            <h3>Customer Demographics & Revenue Analytics</h3>
-            <p class="tech-stack">Tableau | SQL | Excel</p>
-            <p class="card-text">
-              Interactive Tableau dashboard evaluating $986M+ in revenue across 150k+ orders. Features breakdowns of monthly revenue trends, occupation spending, age vs. AOV, and customer cuisine preferences.
-            </p>
-            <a href="project-customer-analytics.html" class="btn btn-secondary">Read Case Study &rarr;</a>
+          <div class="skill-group">
+            <div class="skill-group-title">BI & Data Visualization</div>
+            <div class="skill-group-items">Power BI, DAX, Data Modeling (Star Schema), Tableau, Advanced Excel</div>
           </div>
-        </article>
+          <div class="skill-group">
+            <div class="skill-group-title">Analytics & Marketing</div>
+            <div class="skill-group-items">Google Analytics 4 (GA4), Google Tag Manager (GTM), SEO Consulting, A/B Testing</div>
+          </div>
+        </div>
+      </section>
 
-        <!-- Project Card 2 -->
-        <article class="project-card">
-          <div class="card-img-wrapper">
-            <img src="shopify-app-analysis.png" alt="Shopify App Performance and Review Analytics Scatterplot" />
-          </div>
-          <div class="card-body">
-            <h3>Shopify App Ecosystem & Review Analytics</h3>
-            <p class="tech-stack">Power BI | DAX | Data Modeling</p>
-            <p class="card-text">
-              Analyzed scraped Shopify App Store data using multi-table relational modeling and custom DAX measures. Evaluated app success drivers, review count volatility vs. rating stability, and developer response behaviors.
-            </p>
-            <a href="project-shopify.html" class="btn btn-secondary">Read Case Study &rarr;</a>
-          </div>
-        </article>
+      <!-- Featured Projects / Applied Analytics -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">Key Analytics Projects</h2>
 
-        <!-- Project Card 3 -->
-        <article class="project-card">
-          <div class="card-img-wrapper">
-            <img src="vc-startup-sql.png" alt="Venture Capital SQL Analysis" />
+        <div class="timeline-item">
+          <div class="item-header">
+            <span class="item-title">Customer Demographics & Revenue Analytics</span>
+            <span class="item-date">Tableau | SQL | Excel</span>
           </div>
-          <div class="card-body">
-            <h3>Venture Capital & Startup Ecosystem Analysis (SQL)</h3>
-            <p class="tech-stack">SQL (Complex Joins & Subqueries) | ERD Modeling</p>
-            <p class="card-text">
-              Queried a multi-table relational database covering startup acquisitions, funding rounds, venture funds, and founder education backgrounds to evaluate investment outcomes and company performance metrics.
-            </p>
-            <a href="project-vc-sql.html" class="btn btn-secondary">Read Case Study &rarr;</a>
+          <ul class="item-bullet-list">
+            <li>Engineered an interactive Tableau dashboard evaluating $986M+ in revenue across 150,000+ transactional records.</li>
+            <li>Constructed SQL subqueries and aggregation models to analyze monthly revenue trends, occupation spending profiles, and age-vs-AOV correlation patterns.</li>
+            <li>Identified key customer demographics and cuisine preferences to inform targeted marketing acquisition strategies.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="item-header">
+            <span class="item-title">Shopify App Ecosystem & Review Analytics</span>
+            <span class="item-date">Power BI | DAX | Data Modeling</span>
           </div>
-        </article>
+          <ul class="item-bullet-list">
+            <li>Designed a multi-table relational database model and custom DAX measures in Power BI from scraped e-commerce dataset.</li>
+            <li>Analyzed review count volatility against rating stability, establishing benchmarks for developer response frequency and app retention drivers.</li>
+          </ul>
+        </div>
 
-      </div>
-    </section>
+        <div class="timeline-item">
+          <div class="item-header">
+            <span class="item-title">Venture Capital & Startup Ecosystem SQL Analysis</span>
+            <span class="item-date">SQL | ERD Modeling</span>
+          </div>
+          <ul class="item-bullet-list">
+            <li>Queried complex relational databases using window functions, multiple JOINs, and conditional logic to track startup funding trajectories.</li>
+            <li>Evaluated acquisition outcomes across venture fund rounds, founder education backgrounds, and capital efficiency metrics.</li>
+          </ul>
+        </div>
+      </section>
 
-    <!-- Technical Toolkit Section -->
-    <section class="section">
-      <h2 class="section-title">TECHNICAL TOOLKIT</h2>
-      <div class="toolkit-grid">
-        <span class="tool-badge">SQL</span>
-        <span class="tool-badge">Power BI</span>
-        <span class="tool-badge">Tableau</span>
-        <span class="tool-badge">Python</span>
-        <span class="tool-badge">Excel</span>
-        <span class="tool-badge">Google Sheets</span>
-        <span class="tool-badge">GA4</span>
-        <span class="tool-badge">GTM</span>
-        <span class="tool-badge">HTML5</span>
-        <span class="tool-badge">CSS3</span>
-      </div>
-    </section>
+      <!-- Experience History -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">Professional Experience</h2>
 
+        <div class="timeline-item">
+          <div class="item-header">
+            <div>
+              <span class="item-title">Digital Marketing & Performance SEO Consultant</span>
+            </div>
+            <span class="item-date">Greater Boston, MA</span>
+          </div>
+          <ul class="item-bullet-list">
+            <li>Advised clients on digital marketing strategies, organic acquisition funnels, and performance tracking architectures.</li>
+            <li>Utilized Google Analytics 4 (GA4) and Google Tag Manager (GTM) to set up custom conversion event pipelines, reporting dashboards, and user behavior funnels.</li>
+            <li>Leveraged data insights to optimize content performance, increase campaign ROI, and streamline client revenue drivers.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education & Credentials -->
+      <section class="resume-section">
+        <h2 class="resume-section-title">Education & Credentials</h2>
+
+        <div class="timeline-item">
+          <div class="item-header">
+            <div>
+              <span class="item-title">Business Intelligence Analytics</span>
+              <span class="item-company"> — TripleTen</span>
+            </div>
+          </div>
+          <ul class="item-bullet-list">
+            <li>Intensive practical training in SQL query optimization, Power BI dashboard development, Tableau data storytelling, spreadsheet modeling, and Python data analysis.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="item-header">
+            <div>
+              <span class="item-title">Bachelor of Arts in Communications</span>
+            </div>
+          </div>
+          <ul class="item-bullet-list">
+            <li>Coursework focused on media strategy, technical writing, audience analytics, and mass communication theory.</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
   </main>
 
   <!-- Dark Footer -->
