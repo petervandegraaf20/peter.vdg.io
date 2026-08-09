@@ -248,17 +248,30 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 12px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .tool-badge {
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  padding: 8px 16px;
-  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 8px 18px;
+  border-radius: 20px; /* Pillow / capsule shape */
   font-weight: 600;
-  color: #334155;
-  font-size: 0.9rem;
+  color: #1e293b;
+  font-size: 0.88rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease-in-out;
+  cursor: default;
+}
+
+.tool-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  border-color: #0284c7;
+  color: #0284c7;
+  background-color: #f0f9ff;
 }
 
 /* Resume Page Styles */
